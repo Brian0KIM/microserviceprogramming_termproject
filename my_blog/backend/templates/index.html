@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Blog</title>
+<h1>Blog Posts</h1>
+<a href="{{ url_for('create') }}">New Post</a>
+<ul>
+  {% for post in posts %}
+  <li>{{ post[1] }}
+    <form action="{{ url_for('delete', id=post[0]) }}" method="post" style="display: inline;">
+      <button type="submit">Delete</button>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
