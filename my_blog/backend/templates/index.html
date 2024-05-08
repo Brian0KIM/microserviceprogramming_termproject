@@ -11,12 +11,20 @@
           padding: 10px;
           border-bottom: 1px solid #ccc;
       }
-      .post-content {
-          margin: 10px 0;
-      }
-      .delete-form {
-          text-align: right;
-      }
+      .post-header {
+            display: flex;
+            align-items: center;
+        }
+        .post-index {
+            width: 30px; 
+            font-weight: bold;
+        }
+        .post-content {
+            margin: 10px 0;
+        }
+        .delete-form {
+            text-align: right;
+        }
   </style>
 </head>
 <body>
@@ -35,15 +43,17 @@
   <a href="{{ url_for('create') }}">Create Post</a>
   <div>
       {% for post in posts %}
-      <div class="post-item">
-          <div><strong>Title:</strong> {{ post[1] }}</div>
-          <div class="post-content"><strong>Content:</strong> {{ post[2] }}</div>
-          <div class="delete-form">
-              <form action="{{ url_for('delete', id=post[0]) }}" method="post">
-                  <button type="submit">Delete</button>
-              </form>
-          </div>
-      </div>
+      <div class="post-header">
+        <div class="post-index">{{ loop.index }}.</div>
+        <div><strong>Title:</strong> {{ post[1] }}</div>
+    </div>
+    <div class="post-content"><strong>Content:</strong> {{ post[2] }}</div>
+   
+    <div class="delete-form">
+        <form action="{{ url_for('delete', id=post[0]) }}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
       {% endfor %}
   </div>
 </body>
