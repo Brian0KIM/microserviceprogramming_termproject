@@ -1,13 +1,28 @@
 <!doctype html>
+<html lang="en"></html>
 <title>Blog</title>
-<h1>Blog Posts</h1>
+<body>
+  <h1>Welcome to My Blog</h1>
+  <p>Hi, I'm SEONGMIN KIM. Welcome to my Blog!</p>
+  <img src="{{ url_for('static', filename='images/image1.jpg') }}" width="130" height="200">
+    <h3>About Me</h3>
+    <p>Day of birth: 2002.08.09 </p>
+    <p>B.A. degree expected in Computer Science Engineering in KyungHee University</p>
+    <p>AWS Cloud Clubs SouthKorea KHU 2nd Member</p>
+  <h3>Contact</h3>
+  <p>You can reach me on briankim020809@gmail.com.</p>
+</body>
+<h2>Blog Posts</h2>
 <a href="{{ url_for('create') }}">New Post</a>
 <ul>
   {% for post in posts %}
-  <li>{{ post[1] }}
-    <form action="{{ url_for('delete', id=post[0]) }}" method="post" style="display: inline;">
-      <button type="submit">Delete</button>
-    </form>
+  <li>
+    <div style="margin-bottom: 10px;">{{ post[1] }}: {{ post[2] }}</div>
+    <div>
+      <form action="{{ url_for('delete', id=post[0]) }}" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
   </li>
   {% endfor %}
 </ul>
