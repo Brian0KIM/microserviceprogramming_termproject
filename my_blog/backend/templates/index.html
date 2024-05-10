@@ -7,23 +7,30 @@
   <title>Blog</title>
   <style>
       .post-item {
-          margin-bottom: 20px;
-          padding: 10px;
-          border-bottom: 1px solid #ccc;
-      }
-      .post-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start; 
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 2px solid #000;
         }
         .post-index {
             width: 30px; 
             font-weight: bold;
+            font-size: 20px; 
+            margin-right: 10px; 
+        }
+        .post-body {
+            flex-grow: 1; 
+        }
+        .post-title {
+            font-weight: bold;
         }
         .post-content {
-            margin: 10px 0;
+            margin-top: 5px; 
         }
         .delete-form {
             text-align: right;
+            margin-top: 10px; 
         }
   </style>
 </head>
