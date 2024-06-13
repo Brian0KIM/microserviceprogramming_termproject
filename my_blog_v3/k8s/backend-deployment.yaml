@@ -19,4 +19,7 @@ spec:
         - containerPort: 5000
         env:
         - name: DATABASE_URL
-          value: "postgresql://user:password@postgres-service:5432/blogdb"
+          value: postgresql://user:password@db-service:5432/blogdb
+
+
+
